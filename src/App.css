@@ -36,3 +36,44 @@
     transform: rotate(360deg);
   }
 }
+
+.checkbox {
+  margin: 6px 10px 5.8px 3px;
+  border-radius: 2px;
+  border: solid 1px #c6c4d2;
+  width: 5%;
+  float: left;
+  font-size: 16px;
+}
+
+.description {
+  padding-bottom: 1px;
+  margin-top: 4px;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  text-align: left;
+}
+
+.container {
+  margin-bottom: 0px !important;
+  margin-top: 2px;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.command {
+  padding: 0px 5px;
+  background: 'black';
+  color: green;
+}
+
+.file {
+  padding: 0px 5px;
+  background: 'black';
+  color: orange;
+}
