@@ -14,7 +14,7 @@ WebdriverIO was telling me that `Step "I should view a flash message saying Acce
 
 If scenario 1 was testing my ability to debug tests, then scenario 2 tested my JavaScript ability. The tests were all correct, it was the app itself that was broken. 
 
-Disclamer: I have never used React before. This, however, proved to not be a massive issue. I understand the fundamental issues that React hopes to solve in the web-development environment, that is maintaining a clear and immutable state, while updating the DOM to reflect any new states. 
+Disclamer: I have never used React before. This, however, proved to not be a massive issue. I understand that some of the fundamental issues that React hopes to solve in the web-development environment is maintaining a clear and immutable state, while updating the DOM to reflect any new states. 
 
 The purpose of the app was to update when a checkbox item has been selected, and reflect that selected item in the "Selected Items" box at the bottom of the screen.
 
