@@ -18,7 +18,7 @@ Disclamer: I have never used React before. This, however, proved to not be a mas
 
 The purpose of the app was to update when a checkbox item has been selected, and reflect that selected item in the "Selected Items" box at the bottom of the screen.
 
-The `Test2.js` file had a helpful hint as to where changes needed to be made. It was the `handleCheckboxChange()` function that needed work. I immedietly saw that the state, which was defined at the top of the file, needed to be updated when the checkbox was checked by the user. I didn't understand how to change state properly in React, I initially tried to simply push or splice the state.selections arrray, didn't work, so I watched a [video](https://www.youtube.com/watch?v=O6P86uwfdR0) on youtube that quickly explained `useState()` to me. 
+The `Test2.js` file had a helpful hint as to where changes needed to be made. It was the `handleCheckboxChange()` function that needed work. I immedietly saw that the state, which was defined at the top of the file, needed to be updated when the checkbox was checked by the user. I didn't understand how to change state properly in React, I initially tried to simply push or splice the state.selections arrray, but that didn't work, so I watched a [video](https://www.youtube.com/watch?v=O6P86uwfdR0) on youtube that quickly explained `useState()` to me. 
 
 I've managed states in a previous project of mine, my [Todo List](https://github.com/zeagle848/todo-list) to be specific, and I recognized that I needed to return a copy of the previous state with only a single option item either added or removed. To do this I used the spread operator in conjunction with specifically the `.filter` method for when I wanted to remove an item from the selections array. 
 
