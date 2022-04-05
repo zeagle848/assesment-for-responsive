@@ -1,20 +1,20 @@
-import { Given, When, Then } from '@wdio/cucumber-framework';
-import Page from '../pageobjects/page';
-import ListPage from '../pageobjects/list.page';
-import LoginPage from '../pageobjects/login.page';
-import SecurePage from '../pageobjects/secure.page';
+import { Given, When, Then } from "@wdio/cucumber-framework";
+import Page from "../pageobjects/page";
+import ListPage from "../pageobjects/list.page";
+import LoginPage from "../pageobjects/login.page";
+import SecurePage from "../pageobjects/secure.page";
 
 Given(/^I am on the "([^"]*)" page$/, async (page) => {
-  const pageKey = page.replace(/\s+/g, '');
+  const pageKey = page.replace(/\s+/g, "");
   switch (pageKey) {
-    case 'test1':
+    case "test1":
       await LoginPage.open(pageKey);
       break;
-    case 'test2':
+    case "test2":
       await ListPage.open(pageKey);
       break;
     default:
-      Page.open(pageKey)
+      Page.open(pageKey);
   }
 });
 
@@ -23,14 +23,14 @@ When(/^I login with (\w+) and (.+)$/, async (username, password) => {
 });
 
 When(/^I click the "([^"]*)" button$/, (element) => {
-  if (!LoginPage[element.toLowerCase()]) {
+  if (![element.toLowerCase()]) {
     throw new Error(
       `Function or property "${element}" does not exist on Login page"`
     );
   }
 
   try {
-    typeof LoginPage[element.toLowerCase()] === 'function'
+    typeof LoginPage[element.toLowerCase()] === "function"
       ? LoginPage[element.toLowerCase()].bind(LoginPage)
       : LoginPage[element.toLowerCase()].click();
   } catch (err) {
@@ -39,16 +39,16 @@ When(/^I click the "([^"]*)" button$/, (element) => {
 });
 
 When(/^I select "([^"]*)" checkbox$/, (element) => {
-  if (!ListPage[element.toLowerCase().replace(/\s+/g, '')]) {
+  if (!ListPage[element.toLowerCase().replace(/\s+/g, "")]) {
     throw new Error(
       `Function or property "${element}" does not exist on List page"`
     );
   }
 
   try {
-    typeof ListPage[element.toLowerCase().replace(/\s+/g, '')] === 'function'
-      ? ListPage[element.toLowerCase().replace(/\s+/g, '')].bind(ListPage)
-      : ListPage[element.toLowerCase().replace(/\s+/g, '')].click();
+    typeof ListPage[element.toLowerCase().replace(/\s+/g, "")] === "function"
+      ? ListPage[element.toLowerCase().replace(/\s+/g, "")].bind(ListPage)
+      : ListPage[element.toLowerCase().replace(/\s+/g, "")].click();
   } catch (err) {
     throw new Error(err);
   }
@@ -60,14 +60,16 @@ Then(/^I should see a flash message saying (.*)$/, async (message) => {
 });
 
 Then(/^I expect the "([^"]*)" to contain "([^"]*)"$/, async (element, text) => {
-  if (!ListPage[element.toLowerCase().replace(/\s+/g, '')]) {
+  if (!ListPage[element.toLowerCase().replace(/\s+/g, "")]) {
     throw new Error(
       `Function or property "${element}" does not exist on List page"`
     );
   }
 
   try {
-    await expect(ListPage[element.toLowerCase().replace(/\s+/g, '')]).toHaveTextContaining(text);
+    await expect(
+      ListPage[element.toLowerCase().replace(/\s+/g, "")]
+    ).toHaveTextContaining(text);
   } catch (err) {
     throw new Error(err);
   }

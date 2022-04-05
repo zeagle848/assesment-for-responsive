@@ -18,7 +18,6 @@ function Test2() {
   const handleCheckboxChange = (key) => {
     let sel = state.selections;
     let indexOfKey = sel.indexOf(key);
-    // //missing code here
     if (indexOfKey === -1) {
       // If the index of the key doesn't exist in state.selections then we need
       // to use the spread operator to return a new state, exactly the same as before,
